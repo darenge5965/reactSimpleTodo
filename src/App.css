@@ -6,15 +6,15 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
   background-color: #3b36cc;
   font-family: sans-serif;
 }
 .Wrapper {
+  margin-top: 50px;
   text-align: center;
-  width: 350px;
-  padding: 20px;
+  width: 450px;
+  padding: 30px;
   background-color: #1a1a40;
   border-radius: 5px;
   color: white;
