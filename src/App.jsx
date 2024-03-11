@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState } from "react";
 import TodoForm from "./components/TodoForm";
 import Todo from "./components/Todo";
 import { v4 as uuidv4 } from "uuid";
-import './App.css'
+import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -46,14 +46,16 @@ function App() {
     );
   };
   const editTodo = (id, content) => {
-    setTodos(todos.map((todo) => {
-      return todo.id !== id ? todo : {...todo, content}
-    }));
+    setTodos(
+      todos.map((todo) => {
+        return todo.id !== id ? todo : { ...todo, content };
+      })
+    );
   };
 
   return (
     <div className="Wrapper">
-      <h1>代辦事項</h1>
+      <h1>待辦事項</h1>
       <TodoForm addTodo={addTodo} />
       {todos.map((todo) => {
         return (
@@ -68,9 +70,7 @@ function App() {
         );
       })}
     </div>
-  )
+  );
 }
 
-
-
-export default App
+export default App;
