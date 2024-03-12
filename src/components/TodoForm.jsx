@@ -10,11 +10,11 @@ function TodoForm({ addTodo }) {
   };
 
   return (
-    <form className="add-todo-form" onSubmit={handleSubmit}>
+    <form className="create-form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={content}
-        placeholder="輸入代辦事項"
+        placeholder="輸入待辦事項"
         onChange={(e) => setContent(e.target.value)}
       />
       <button type="submit">加入</button>

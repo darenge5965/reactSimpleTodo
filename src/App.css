@@ -20,7 +20,7 @@ body {
   border-radius: 5px;
   color: white;
 }
-.add-todo-form {
+.create-form {
   display: flex;
   align-items: center;
   height: 40px;
@@ -29,7 +29,7 @@ body {
   border: 1px solid #3b36cc;
 }
 
-.add-todo-form > input {
+.create-form > input {
   outline: none;
   background: none;
   border: none;
@@ -39,7 +39,7 @@ body {
   padding-left: 10px;
 }
 
-.add-todo-form > button {
+.create-form > button {
   background: #3b36cc;
   color: #fff;
   border: none;
