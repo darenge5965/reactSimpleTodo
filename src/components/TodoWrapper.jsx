@@ -1,18 +1,31 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import TodoForm from "./TodoForm";
+import CreateForm from "./CreateForm";
 import Todo from "./Todo";
 
 function TodoWrapper() {
   const [todos, setTodos] = useState([
-    { content: "打掃廁所", id: uuidv4(), isCompleted: false, isEditing: false },
-    { content: "寫作業", id: uuidv4(), isCompleted: false, isEditing: false },
+    {
+      content: "打掃廁所",
+      id: Math.random(),
+      isCompleted: false,
+      isEditing: false,
+    },
+    {
+      content: "寫作業",
+      id: Math.random(),
+      isCompleted: true,
+      isEditing: false,
+    },
   ]);
-
   const addTodo = (content) => {
-    setTodos([...todos, { content, id: uuidv4() }]);
+    setTodos([
+      ...todos,
+      {
+        content,
+        id: Math.random(),
+      },
+    ]);
   };
-
   const deleteTodo = (id) => {
     setTodos(
       todos.filter((todo) => {
@@ -20,50 +33,43 @@ function TodoWrapper() {
       })
     );
   };
-
-  const toggleComplete = (id) => {
+  const toggleCompleted = (id) => {
     setTodos(
       todos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, isCompleted: !todo.isCompleted };
-        } else {
-          return todo;
-        }
+        return todo.id === id
+          ? { ...todo, isCompleted: !todo.isCompleted }
+          : todo;
       })
     );
   };
-
-  const toggleEdit = (id) => {
+  const toggleIsEditing = (id) => {
     setTodos(
       todos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, isEditing: !todo.isEditing };
-        } else {
-          return todo;
-        }
+        return todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo;
       })
     );
   };
-  const editTodo = (id, content) => {
+  const editTodo = (id, newContent) => {
     setTodos(
       todos.map((todo) => {
-        return todo.id !== id ? todo : { ...todo, content };
+        return todo.id === id
+          ? { ...todo, content: newContent, isEditing: false }
+          : todo;
       })
     );
   };
-
   return (
-    <div className="Wrapper">
+    <div className="wrapper">
       <h1>待辦事項</h1>
-      <TodoForm addTodo={addTodo} />
+      <CreateForm addTodo={addTodo} />
       {todos.map((todo) => {
         return (
           <Todo
             todo={todo}
             key={todo.id}
             deleteTodo={deleteTodo}
-            toggleComplete={toggleComplete}
-            toggleEdit={toggleEdit}
+            toggleCompleted={toggleCompleted}
+            toggleIsEditing={toggleIsEditing}
             editTodo={editTodo}
           />
         );
@@ -71,4 +77,4 @@ function TodoWrapper() {
     </div>
   );
 }
-export default TodoWrapper
+export default TodoWrapper;
