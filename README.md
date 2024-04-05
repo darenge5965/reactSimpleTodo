@@ -2,11 +2,12 @@
 # React快速入門
 這是一個由React以及Vite所寫成的簡單todo應用，目的是在幫助初學者學習React。
 
-課程影片：https://www.youtube.com/watch?v=aBTiZfShe-4
+課程影片：https://www.youtube.com/watch?v=aBTiZfShe-4  
+
 線上Demo：https://reactsimpletodo.darenge.net/
 
 
-![website screenshot](./screenshot.jpg)
+![website screenshot](./screenshot.png)
 
 
 ## 安裝步驟
