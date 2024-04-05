@@ -14,10 +14,10 @@
 
 請依序執行以下指令：
 ```
- git clone https://github.com/darenge5965/reactSimpleTodo.git
- cd reactSimpleTodo
- npm install
- npm run dev
+git clone https://github.com/darenge5965/reactSimpleTodo.git
+cd reactSimpleTodo
+npm install
+npm run dev
 ```
 執行完後vite會啟動開發伺服器，並且terminal會顯示一個localhost的網址，把他貼到瀏覽器上即可。
 
