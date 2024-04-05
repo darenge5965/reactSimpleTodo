@@ -23,6 +23,8 @@ function TodoWrapper() {
       {
         content,
         id: Math.random(),
+        isCompleted: false,
+        isEditing: false,
       },
     ]);
   };
